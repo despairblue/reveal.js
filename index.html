@@ -315,16 +315,115 @@
 
         <section>
           <section>
-            <h2>Verbundene Arbeiten</h2>
+            <h2>Verwandte Arbeiten</h2>
 
             <ol>
-              <li>3D Meteor</li>
-              <li>Collaborative Working with Blender</li>
-              <li>Component Editor</li>
-              <li>Gizmos</li>
-              <li>Real-Time Collaborative Scientific WebGL Visualization with Web Sockets</li>
-              <li>ParaViewWeb</li>
+              <li class="fragment">Gemeinsames Analysieren
+                <ul>
+                  <li>Real-Time Collaborative Scientific WebGL Visualization with Web Sockets</li>
+                  <li>ParaViewWeb</li>
+                </ul>
+              </li>
+              <li class="fragment">Gemeinamens Bearbeiten
+                <ul>
+                  <li>3D Meteor</li>
+                  <li>Collaborative Working with Blender</li>
+                </ul>
+              </li>
+              <li class="fragment">3D-Editoren
+                <ul>
+                  <li>Component Editor</li>
+                </ul>
+              </li>
+              <li class="fragment">Interaktive Szenen
+                <ul>
+                  <li>Gizmos</li>
+                </ul>
+              </li>
             </ol>
+          </section>
+
+          <section>
+            <h3>Ideale Anforderungen</h3>
+
+            <ul>
+              <li>Meta-Informationen</li>
+              <li>X3D</li>
+              <li>Szenengraph</li>
+              <li></li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Meta-Informationen (IDs) müssen erhalten bleiben.</li>
+                <li>Native Unterstützung des X3D-Formats (keine Konvertierung).</li>
+                <li>Szenengraphenstruktur muss erhalten bleiben.</li>
+                <li></li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h6>Real-Time Collaborative Scientific WebGL Visualization with Web Sockets</h6>
+
+            <img
+              data-src="images/rtcwebgl.png"
+              alt=""
+              style="height:60vh;"
+              class="fragment grow"
+              />
+              <p>
+                <small><a style="z-index:-1" href="http://doi.acm.org/10.1145/2338714.2338721">http://doi.acm.org/10.1145/2338714.2338721</a></small>
+              </p>
+
+            <aside class="notes">
+              <ol>
+                <li>erklären was passiert</li>
+              </ol>
+            </aside>
+          </section>
+
+          <section>
+            <h6>Real-Time Collaborative Scientific WebGL Visualization with Web Sockets</h6>
+
+            <p>Defizite</p>
+            <ul>
+              <li class="fragment">Render Engine is Three.js</li>
+              <ul>
+                <li class="fragment">Dateiformat: Obj</li>
+                <li class="fragment"><a href="https://github.com/x3dom/x3dom/issues/263#issuecomment-31338914">alle Szenegraphinformationen gehen verloren</a></li>
+              </ul>
+            </ul>
+
+            <aside class="notes">
+              Synchronisiert eventuell mehr, allerdings ist aus dem Paper nicht zu entnehmen wie das passiert.
+            </aside>
+          </section>
+
+          <section>
+            <h2>ParaViewWeb</h2>
+
+            <p>Erfüllte Anforderungen</p>
+
+            <ul>
+              <li class="fragment">X3D Export</li>
+              <li class="fragment"></li>
+            </ul>
+
+            <p> Defizite </p>
+
+            <ul>
+              <li class="fragment">Visualization-Pipeline</li>
+              <li class="fragment">Kann X3D nicht importieren, nur VRML</li>
+              <li class="fragment">Kann es aber exportieren</li>
+            </ul>
+            <aside class="notes">
+              Ermöglicht es eine in paraview gerenderte szene im browser zu embedden.
+              <ul>
+                <li>ParaView instanz auf einem Server nötig.</li>
+                <li>Szene kann nur durch ändern der Visualization-Pipeline aufm server verändert werden. (View Point?)</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -394,75 +493,26 @@
 
             <img data-src="images/robot.png" alt="" />
 
-            <aside class="notes">
-              <ul>
-                <li>x3d importieren</li>
-                <li>x3d exportieren</li>
-                <li>inlines laden</li>
-              </ul>
-            </aside>
           </section>
 
           <section>
             <h2>Component Editor</h2>
             <h3>Defizite</h3>
             <ul>
-              <li class="fragment">x3d importieren</li>
-              <li class="fragment">x3d exportieren</li>
-              <li class="fragment">inlines laden</li>
+              <li class="fragment">X3D Import/Export</li>
+              <li class="fragment">Inlines</li>
             </ul>
-          </section>
 
-          <section>
-            <p>Real-Time Collaborative Scientific WebGL Visualization with Web Sockets</p>
-
-            <img data-src="images/rtcwebgl.png" alt="" />
             <aside class="notes">
-              <ol>
-                <li>erklären was passiert</li>
-              </ol>
-            </aside>
-          </section>
-
-          <section>
-            <p>Real-Time Collaborative Scientific WebGL Visualization with Web Sockets</p>
-            <p>Defizite</p>
-
-            <ul>
-              <li class="fragment">Render Engine is Three.js</li>
               <ul>
-                <li class="fragment">Dateiformat: Obj</li>
-                <li class="fragment"><a href="https://github.com/x3dom/x3dom/issues/263#issuecomment-31338914">alle Szenegraphinformationen gehen verloren</a></li>
-              </ul>
-            </ul>
-
-            <aside class="notes">
-              Synchronisiert eventuell mehr, allerdings ist aus dem Paper nicht zu entnehmen wie das passiert.
-            </aside>
-          </section>
-
-          <section>
-            <h2>ParaViewWeb</h2>
-
-            <p>Erfüllungen</p>
-
-            <ul>
-              <li class="fragment">X3D Export</li>
-              <li class="fragment"></li>
-            </ul>
-
-            <p> Defizite </p>
-
-            <ul>
-              <li class="fragment">Visualization-Pipeline</li>
-              <li class="fragment">Kann X3D nicht importieren, nur VRML</li>
-              <li class="fragment">Kann es aber exportieren</li>
-            </ul>
-            <aside class="notes">
-              Ermöglicht es eine in paraview gerenderte szene im browser zu embedden.
-              <ul>
-                <li>ParaView instanz auf einem Server nötig.</li>
-                <li>Szene kann nur durch ändern der Visualization-Pipeline aufm server verändert werden. (View Point?)</li>
+                <li>X3D kann nicht importiert werden
+                  <ul>
+                    <li>Filter müssten implementiert werden</li>
+                    <li>nur eine JSON-Representation ➡️ MetaInformation gehen verloren</li>
+                  </ul>
+                </li>
+                <li>X3D kann nicht exportiert werden (nur eine JSON-Representation)</li>
+                <li>Inlines können nicht geladen werden</li>
               </ul>
             </aside>
           </section>
@@ -483,7 +533,14 @@
           <section>
             <h2>Gizmos</h2>
 
-            <iframe data-src="iframe/teapot.html" width="600" height="400"></iframe>
+            <iframe
+              data-src="iframe/teapot.html"
+              style="width:60vw; height:60vh"
+              >
+            </iframe>
+            <p>
+              <small>http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html</small>
+            </p>
           </section>
         </section>
 
