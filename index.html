@@ -556,6 +556,56 @@
               <img src="images/Manual-Manipulators-Rotate.jpg" alt="" />
               <img src="images/Manual-Manipulators-Combo.jpg" alt="" />
             </div>
+
+            <p>
+              <small><a href="http://wiki.blender.org/index.php/Doc:2.4/Manual/3D_interaction/Transform_Control/Manipulators">http://wiki.blender.org/index.php/Doc:2.4/Manual/3D_interaction/Transform_Control/Manipulators</a></small>
+            </p>
+
+            <aside class="notes">
+              Gizmos sind 3D-Objekte innerhalb der 3D-Szene die dazu dienen die Szene selbst du beeinflussen und zu ändern.
+              In Blender werden diese Manipulatoren genannt.
+
+              Hier zu sehen sind:
+              <ol>
+                <li>Translations-Manipulator</li>
+                <li>Skalier-Manipulator</li>
+                <li>Rotations-Manipulator</li>
+                <li>Alle 3 Zusammen</li>
+              </ol>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Gizmos</h2>
+
+            <ul>
+              <li>PlaneSensor</li>
+              <li>SphereSensor</li>
+              <li>CylinderSensor</li>
+            </ul>
+
+            <aside class="notes">
+              Alle Sensoren wandeln Mausbewegungen und Touchgesten in Rotationen oder Translationen um.
+              Im Falle des PlaneSensors in Tranlationen, im Falle des SphereSensors in eine freie rotation und im
+              Falle des CylinderSensors in eine Rotation in einer Ebene.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Gizmos</h2>
+            <h3>Example</h3>
+
+            <pre><code class="hljs" data-trim>
+&lt;Group&gt;&#10;  &lt;PlaneSensor&#10;    autoOffset=&apos;true&apos;&#10;    axisRotation=&apos;1 0 0 -1.57&apos;&#10;    minPosition=&apos;-6 0&apos;&#10;    maxPosition=&apos;6 0&apos;&#10;    onoutputchange=&apos;processTranslationGizmoEvent(event)&apos;&#10;    &gt;&#10;  &lt;/PlaneSensor&gt;&#10;  &lt;Transform id=&apos;translationHandleTransform&apos;&gt;&#10;    ...&#10;  &lt;/Transform&gt;&#10;&lt;/Group&gt;
+            </code></pre>
+
+            <aside class="notes">
+              Der PlaneSensor funktioniert indem er auf alle Touch und Mouseevents seiner Geschwisterknoten reagiert.
+              In diesem Fall ist es die Transformation und alles was da drin enthalten ist.
+              Der PlaneSensor hat einige Attribute wie minimale und maximale Auslenkung, sowie einen Callback.
+              Dieser Callback erhält die jeweilige Auslenkung des Sensors, diese Auslenkung kann dann auch auf andere
+              Objekte angewandt werden.
+            </aside>
           </section>
 
           <section>
@@ -567,8 +617,42 @@
               >
             </iframe>
             <p>
-              <small>http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html</small>
+              <small><a href="http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html">http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html</a></small>
             </p>
+
+            <aside class="notes">
+              Hier ist ein Beispiel von CylinderSensor und PlaneSensor Knoten.
+              Jedes Band ist der Geschwisterknoten eines CylinderSensors.
+              Der Zylinder mit den Kegeln ist der Geschwisterknoten eines PlaneSensors.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Gizmos</h2>
+            <h3>Callback</h3>
+            <pre><code class="hljs" style="font-size: 80%; line-height:normal" data-trim contenteditable>
+
+const processTranslationGizmoEvent = event => {
+  if (event.fieldName === 'translation_changed') {
+    //convert the sensor's output from sensor coordinates to world coordinates (i.e., include its 'axisRotation')
+    const sensorToWorldMatrix = x3dom
+      .fields.SFMatrix4f.parseRotation(event.target.getAttribute("axisRotation"));
+
+    const translationValue = sensorToWorldMatrix.multMatrixVec(event.value);
+
+    //transform the affected sensor geometry
+    document.getElementById('translationHandleTransform')
+      .setFieldValue('translation', translationValue);
+    document.getElementById('rotationHandleTransform')
+      .setFieldValue('translation', translationValue);
+
+    //transform the affected element
+    document.getElementById('teapotTranslation')
+      .setFieldValue('translation', translationValue);
+  }
+}
+
+            </code></pre>
           </section>
         </section>
 
