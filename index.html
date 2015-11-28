@@ -61,7 +61,7 @@
           </section>
 
           <section>
-            <img src="images/r3d.png" alt="" />
+            <img data-src="images/r3d.png" alt="" />
             <p>
               <small>TODO: zitieren</small>
             </p>
@@ -88,7 +88,7 @@
 
           <section>
             <h2>Grafischer Editor</h2>
-            <img class="fragment grow" src="images/SSIML.png" alt="Ein SSIML diagram im SSIML Editor." />
+            <img class="fragment grow" data-src="images/SSIML.png" alt="Ein SSIML diagram im SSIML Editor." />
             <h3>TODO: diagram der nachfolgenden szene erstellen</h3>
             <aside class="notes">
 
@@ -98,29 +98,7 @@
           <section>
             <h2>X3D vor Blender</h2>
             <pre><code class="hljs" style="font-size: 80%; line-height:normal" data-trim contenteditable>
-
-<!-- id=bf5e1521-43c0-49ea-9a06-314739e6a81f -->
-<X3D>
-  <!-- id=69b81d54-6e7a-4967-acca-b8c89ba90782 -->
-  <Scene>
-      <!-- id=8d3f0a8a-b6d7-4acc-922b-ea59364443fa -->
-      <Shape >
-        <!-- id=8459b736-5a9d-4688-b624-e519857a92fd -->
-        <Appearance>
-          <!-- id=gf4eh5xw-kc7h-3kgu-ae90-3a4g3heh4a2f -->
-          <Material diffuseColor="1 0 0"/>
-        </Appearance>
-        <Box />
-      </Shape>
-      <!-- id=a4d98xq6-39dj-20dk-ax83-ed1g85aa422d -->
-      <Transform DEF="generatedTransform3" scale="1 1 1"
-                 rotation="0 0 1 0" translation="3 0 0" >
-        <Inline DEF="YBox" nameSpaceName="YBox" url="yellowbox.x3d" >
-        </Inline>
-      </Transform>
-  </Scene>
-</X3D>
-
+&lt;!-- id=bf5e1521-43c0-49ea-9a06-314739e6a81f --&gt;&#10;&lt;X3D&gt;&#10;  &lt;!-- id=69b81d54-6e7a-4967-acca-b8c89ba90782 --&gt;&#10;  &lt;Scene&gt;&#10;      &lt;!-- id=8d3f0a8a-b6d7-4acc-922b-ea59364443fa --&gt;&#10;      &lt;Shape &gt;&#10;        &lt;!-- id=8459b736-5a9d-4688-b624-e519857a92fd --&gt;&#10;        &lt;Appearance&gt;&#10;          &lt;!-- id=gf4eh5xw-kc7h-3kgu-ae90-3a4g3heh4a2f --&gt;&#10;          &lt;Material diffuseColor=&quot;1 0 0&quot;/&gt;&#10;        &lt;/Appearance&gt;&#10;        &lt;Box /&gt;&#10;      &lt;/Shape&gt;&#10;      &lt;!-- id=a4d98xq6-39dj-20dk-ax83-ed1g85aa422d --&gt;&#10;      &lt;Transform DEF=&quot;generatedTransform3&quot; scale=&quot;1 1 1&quot;&#10;                 rotation=&quot;0 0 1 0&quot; translation=&quot;3 0 0&quot; &gt;&#10;        &lt;Inline DEF=&quot;YBox&quot; nameSpaceName=&quot;YBox&quot; url=&quot;yellowbox.x3d&quot; &gt;&#10;        &lt;/Inline&gt;&#10;      &lt;/Transform&gt;&#10;  &lt;/Scene&gt;&#10;&lt;/X3D&gt;
             </code></pre>
             <aside class="notes">
               <ul>
@@ -146,18 +124,7 @@
           <section>
             <h2>Inline Knoten</h2>
             <pre><code class="hljs" data-trim contenteditable>
-
-<X3D>
-  <Scene>
-      <Shape >
-        <Appearance>
-          <Material diffuseColor="0 1 0"/>
-        </Appearance>
-        <Box />
-      </Shape>
-  </Scene>
-</X3D>
-
+&lt;X3D&gt;&#10;  &lt;Scene&gt;&#10;      &lt;Shape &gt;&#10;        &lt;Appearance&gt;&#10;          &lt;Material diffuseColor=&quot;0 1 0&quot;/&gt;&#10;        &lt;/Appearance&gt;&#10;        &lt;Box /&gt;&#10;      &lt;/Shape&gt;&#10;  &lt;/Scene&gt;&#10;&lt;/X3D&gt;
             </code></pre>
             <aside class="notes">
               <ul>
@@ -201,37 +168,7 @@
           <section>
             <h2>X3D nach Blender</h2>
             <pre class="fragment grow"><code class="hljs" style="font-size:58%; line-height:normal;" data-trim>
-
-<X3D version="3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
-  <Scene>
-    <NavigationInfo headlight="true" visibilityLimit="0.0" type='"EXAMINE", "ANY"' avatarSize="0.25, 1.75, 0.75" />
-    <Background DEF="WO_World" groundColor="0.051 0.051 0.051" skyColor="0.051 0.051 0.051" />
-    <Transform DEF="ShapeBox_TRANSFORM" translation="0.000000 0.000000 0.000000"
-               scale="1.000000 1.000000 1.000000" rotation="0.000000 0.000000 -0.000000 0.000000" >
-      <Transform DEF="ShapeBox_ifs_TRANSFORM" translation="0.000000 0.000000 0.000000"
-                 scale="1.000000 1.000000 1.000000" rotation="1.000000 0.000000 0.000000 0.000000" >
-        <Group DEF="group_ME_ShapeBox">
-          <Shape>
-            <Appearance>
-              <Material DEF="MA_Shape" diffuseColor="1.000 0.000 0.000"
-                        specularColor="0.000 0.000 0.000" emissiveColor="0.000 0.000 0.000"
-                        ambientIntensity="0.067" shininess="0.201" transparency="0.0" />
-            </Appearance>
-            <IndexedFaceSet solid="true"
-                            coordIndex="2 0 1 3 -1 3 7 6 2 -1 7 5 4 6 -1 0 4 5 1 -1 0 2 6 4 -1 5 7 3 1 -1 " >
-              <Coordinate DEF="coords_ME_ShapeBox"
-                          point="-1.000000 -1.000000 -1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000
-                          -1.000000 -1.000000 1.000000 1.000000 1.000000 -1.000000 -1.000000 1.000000 -1.000000
-                          1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 "
-                          />
-            </IndexedFaceSet>
-          </Shape>
-        </Group>
-      </Transform>
-    </Transform>
-  </Scene>
-</X3D>
-
+&lt;X3D version=&quot;3.0&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;&#10;  &lt;Scene&gt;&#10;    &lt;NavigationInfo headlight=&quot;true&quot; visibilityLimit=&quot;0.0&quot; type=&apos;&quot;EXAMINE&quot;, &quot;ANY&quot;&apos; avatarSize=&quot;0.25, 1.75, 0.75&quot; /&gt;&#10;    &lt;Background DEF=&quot;WO_World&quot; groundColor=&quot;0.051 0.051 0.051&quot; skyColor=&quot;0.051 0.051 0.051&quot; /&gt;&#10;    &lt;Transform DEF=&quot;ShapeBox_TRANSFORM&quot; translation=&quot;0.000000 0.000000 0.000000&quot;&#10;               scale=&quot;1.000000 1.000000 1.000000&quot; rotation=&quot;0.000000 0.000000 -0.000000 0.000000&quot; &gt;&#10;      &lt;Transform DEF=&quot;ShapeBox_ifs_TRANSFORM&quot; translation=&quot;0.000000 0.000000 0.000000&quot;&#10;                 scale=&quot;1.000000 1.000000 1.000000&quot; rotation=&quot;1.000000 0.000000 0.000000 0.000000&quot; &gt;&#10;        &lt;Group DEF=&quot;group_ME_ShapeBox&quot;&gt;&#10;          &lt;Shape&gt;&#10;            &lt;Appearance&gt;&#10;              &lt;Material DEF=&quot;MA_Shape&quot; diffuseColor=&quot;1.000 0.000 0.000&quot;&#10;                        specularColor=&quot;0.000 0.000 0.000&quot; emissiveColor=&quot;0.000 0.000 0.000&quot;&#10;                        ambientIntensity=&quot;0.067&quot; shininess=&quot;0.201&quot; transparency=&quot;0.0&quot; /&gt;&#10;            &lt;/Appearance&gt;&#10;            &lt;IndexedFaceSet solid=&quot;true&quot;&#10;                            coordIndex=&quot;2 0 1 3 -1 3 7 6 2 -1 7 5 4 6 -1 0 4 5 1 -1 0 2 6 4 -1 5 7 3 1 -1 &quot; &gt;&#10;              &lt;Coordinate DEF=&quot;coords_ME_ShapeBox&quot;&#10;                          point=&quot;-1.000000 -1.000000 -1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000&#10;                          -1.000000 -1.000000 1.000000 1.000000 1.000000 -1.000000 -1.000000 1.000000 -1.000000&#10;                          1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 &quot;&#10;                          /&gt;&#10;            &lt;/IndexedFaceSet&gt;&#10;          &lt;/Shape&gt;&#10;        &lt;/Group&gt;&#10;      &lt;/Transform&gt;&#10;    &lt;/Transform&gt;&#10;  &lt;/Scene&gt;&#10;&lt;/X3D&gt;
             </code></pre>
             <aside class="notes">
               <ul>
@@ -248,50 +185,15 @@
             <h2>X3D</h2>
             <div style="display:flex; flex-direction:row; justify-content:center;">
 
-            <div style="width:50%; font-size: 80%">
-              <pre><code class="hljs" data-trim>
+              <div style="width:50%; font-size: 80%">
+                <pre><code class="hljs html" data-trim contenteditable>
+  &lt;!-- id=bf5e1521-43c0-49ea-9a06-314739e6a81f --&gt;&#10;&lt;X3D&gt;&#10;  &lt;!-- id=69b81d54-6e7a-4967-acca-b8c89ba90782 --&gt;&#10;  &lt;Scene&gt;&#10;    &lt;!-- id=8d3f0a8a-b6d7-4acc-922b-ea59364443fa --&gt;&#10;    &lt;Shape &gt;&#10;      &lt;!-- id=8459b736-5a9d-4688-b624-e519857a92fd --&gt;&#10;      &lt;Appearance&gt;&#10;        &lt;!-- id=gf4eh5xw-kc7h-3kgu-ae90-3a4g3heh4a2f --&gt;&#10;        &lt;Material diffuseColor=&quot;1 0 0&quot;/&gt;&#10;      &lt;/Appearance&gt;&#10;      &lt;Box /&gt;&#10;    &lt;/Shape&gt;&#10;  &lt;/Scene&gt;&#10;&lt;/X3D&gt;
+                </code></pre>
+              </div>
 
-<!-- id=bf5e1521-43c0-49ea-9a06-314739e6a81f -->
-<X3D>
-  <!-- id=69b81d54-6e7a-4967-acca-b8c89ba90782 -->
-  <Scene>
-    <!-- id=8d3f0a8a-b6d7-4acc-922b-ea59364443fa -->
-    <Shape >
-      <!-- id=8459b736-5a9d-4688-b624-e519857a92fd -->
-      <Appearance>
-        <!-- id=gf4eh5xw-kc7h-3kgu-ae90-3a4g3heh4a2f -->
-        <Material diffuseColor="1 0 0"/>
-      </Appearance>
-      <Box />
-    </Shape>
-  </Scene>
-</X3D>
-
-              </code></pre>
-            </div>
-
-            <div style="width:50%; font-size: 70%">
-            <pre><code class="hljs" data-trim>
-
-<X3D>
-  <Scene>
-    <Transform DEF="ShapeBox_TRANSFORM" translation="0.000000 0.000000 0.000000" scale="1.000000 1.000000 1.000000" rotation="0.000000 0.000000 -0.000000 0.000000" >
-      <Transform DEF="ShapeBox_ifs_TRANSFORM" translation="0.000000 0.000000 0.000000" scale="1.000000 1.000000 1.000000" rotation="1.000000 0.000000 0.000000 0.000000" >
-        <Group DEF="group_ME_ShapeBox">
-          <Shape>
-            <Appearance>
-              <Material DEF="MA_Shape" diffuseColor="1.000 0.000 0.000" specularColor="0.000 0.000 0.000" emissiveColor="0.000 0.000 0.000" ambientIntensity="0.067" shininess="0.201" transparency="0.0" />
-            </Appearance>
-            <IndexedFaceSet solid="true" coordIndex="2 0 1 3 -1 3 7 6 2 -1 7 5 4 6 -1 0 4 5 1 -1 0 2 6 4 -1 5 7 3 1 -1 " >
-              <Coordinate DEF="coords_ME_ShapeBox" point="-1.000000 -1.000000 -1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000 -1.000000 -1.000000 1.000000 1.000000 1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 " />
-            </IndexedFaceSet>
-          </Shape>
-        </Group>
-      </Transform>
-    </Transform>
-  </Scene>
-</X3D>
-
+              <div style="width:50%; font-size: 70%">
+                <pre><code class="hljs html" data-trim contenteditable>
+&lt;X3D&gt;&#10;  &lt;Scene&gt;&#10;    &lt;Transform DEF=&quot;ShapeBox_TRANSFORM&quot; translation=&quot;0.000000 0.000000 0.000000&quot; scale=&quot;1.000000 1.000000 1.000000&quot; rotation=&quot;0.000000 0.000000 -0.000000 0.000000&quot; &gt;&#10;      &lt;Transform DEF=&quot;ShapeBox_ifs_TRANSFORM&quot; translation=&quot;0.000000 0.000000 0.000000&quot; scale=&quot;1.000000 1.000000 1.000000&quot; rotation=&quot;1.000000 0.000000 0.000000 0.000000&quot; &gt;&#10;        &lt;Group DEF=&quot;group_ME_ShapeBox&quot;&gt;&#10;          &lt;Shape&gt;&#10;            &lt;Appearance&gt;&#10;              &lt;Material DEF=&quot;MA_Shape&quot; diffuseColor=&quot;1.000 0.000 0.000&quot; specularColor=&quot;0.000 0.000 0.000&quot; emissiveColor=&quot;0.000 0.000 0.000&quot; ambientIntensity=&quot;0.067&quot; shininess=&quot;0.201&quot; transparency=&quot;0.0&quot; /&gt;&#10;            &lt;/Appearance&gt;&#10;            &lt;IndexedFaceSet solid=&quot;true&quot; coordIndex=&quot;2 0 1 3 -1 3 7 6 2 -1 7 5 4 6 -1 0 4 5 1 -1 0 2 6 4 -1 5 7 3 1 -1&quot; &gt;&#10;              &lt;Coordinate DEF=&quot;coords_ME_ShapeBox&quot; point=&quot;-1.000000 -1.000000 -1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000 -1.000000 -1.000000 1.000000 1.000000 1.000000 -1.000000 -1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000 -1.000000 1.000000 1.000000 1.000000&quot; /&gt;&#10;            &lt;/IndexedFaceSet&gt;&#10;          &lt;/Shape&gt;&#10;        &lt;/Group&gt;&#10;      &lt;/Transform&gt;&#10;    &lt;/Transform&gt;&#10;  &lt;/Scene&gt;&#10;&lt;/X3D&gt;
                 </code></pre>
               </div>
             </div>
@@ -434,7 +336,7 @@
             <h2>3D Meteor</h2>
 
             <iframe
-              data-src="https://3d.meteor.com/#scene/eqsdtRNZFaTPesL5x"
+              src="https://3d.meteor.com/#scene/eqsdtRNZFaTPesL5x"
               style="width:60vw; height:60vh"
               >
             </iframe>
@@ -457,7 +359,7 @@
             <h3>Collaborative Working with Blender</h3>
 
             <img
-              src="images/blender.png"
+              data-src="images/blender.png"
               alt="Coords"
               style="height:60vh"
               />
@@ -511,10 +413,11 @@
           <section>
             <h2>Component Editor</h2>
 
+            <!-- TODO: durch iframe ergänzen -->
             <img
               data-src="images/robot.png"
               alt=""
-              style="height:60vh"
+              style="height:50vh"
               />
 
               <p>
@@ -551,10 +454,10 @@
             <h2>Gizmos</h2>
 
             <div style="display:flex; justify-content:center">
-              <img src="images/Manual-Manipulators-Translate.jpg" alt="" />
-              <img src="images/Manual-Manipulators-Scale.jpg" alt="" />
-              <img src="images/Manual-Manipulators-Rotate.jpg" alt="" />
-              <img src="images/Manual-Manipulators-Combo.jpg" alt="" />
+              <img data-src="images/Manual-Manipulators-Translate.jpg" alt="" />
+              <img data-src="images/Manual-Manipulators-Scale.jpg" alt="" />
+              <img data-src="images/Manual-Manipulators-Rotate.jpg" alt="" />
+              <img data-src="images/Manual-Manipulators-Combo.jpg" alt="" />
             </div>
 
             <p>
@@ -612,7 +515,7 @@
             <h2>Gizmos</h2>
 
             <iframe
-              data-src="iframe/teapot.html"
+              src="iframe/teapot.html"
               style="width:60vw; height:60vh"
               >
             </iframe>
@@ -657,40 +560,139 @@ const processTranslationGizmoEvent = event => {
         </section>
 
         <section>
-          <h2>Konzept</h2>
+          <section>
+            <h2>Konzept</h2>
+          </section>
 
-          <iframe data-src="https://knsv.github.io/mermaid/live_editor/#/view/c2VxdWVuY2VEaWFncmFtClVzZXItPj4gQnJvd3NlcjogT3BlbiBXZWJwYWdlCkJyb3dzZXItPj4gU2VydmVyOiBHRVQgUHJvamVjdHMKU2VydmVyLT4-IEJyb3dzZXI6IFJldHVybiBQcm9qZWN0IExpc3QKVXNlci0-PiBCcm93c2VyOiBDaG9vc2UgUHJvamVjdApCcm93c2VyLT4-IFNlcnZlcjogUmV0cmlldmUgaW5kZXgueDNkCkJyb3dzZXItPj4gQnJvd3NlcjogRXZhbHVhdGUgU2NlbmUgKGZpbmQgSW5saW5lcykKQnJvd3Nlci0-PiBTZXJ2ZXI6IEdFVCBJbmxpbmVzClNlcnZlci0-PiBCcm93c2VyOiBSZXR1cm4gSW5saW5lcwpCcm93c2VyLT4-IEJyb3dzZXI6IEV2YWx1YXRlIElubGluZXMKVXNlci0-PiBCcm93c2VyOiBDaGFuZ2UgU2NlbmUKVXNlci0-PiBCcm93c2VyOiBTeW5jaHJvbmlzZSBTY2VuZSEKQnJvd3Nlci0-PiBTZXJ2ZXI6IFBPU1QgU2NlbmUKU2VydmVyLT4-IEJyb3dzZXI6IFNjZW5lIFN5bmNocm9uaXNlZCEKIyBBbHQgMQpVc2VyLT4-IEJyb3dzZXI6IFNhdmUgU2NlbmUhCkJyb3dzZXItPj4gVXNlcjogU2hvdyBTYXZlZGlhbG9n" width="600" height="400" alt="Client ↔️ Server Diagram"></iframe>
+          <section>
+            <h2>Server</h2>
 
-          <aside class="notes">
-            Minute 7
-          </aside>
-        </section>
-
-        <section>
-          <img src="" alt="State - Communication"/>
-
-        </section>
-
-        <section>
-          <h2>implementation</h2>
-
-          <aside class="notes">
-            Wie ist die Applikation geordnet:
             <ul>
-              <li>Angular</li>
-              <ul>
-                <li>Modules loading</li>
-              </ul>
-              <li>React</li>
-              <ul>
-                <li>TreeView</li>
-              </ul>
-              <li>Server Kommunikation</li>
-              <ul>
-                <li>Keine routes, kein Koa, kein Event Loop. Keep it Oberflächlich</li>
-              </ul>
+              <li class="fragment">Ganze Projekte
+                <ul>
+                  <li class="fragment">hochladen</li>
+                  <li class="fragment">ausliefern</li>
+                </ul>
+              </li>
+              <li class="fragment">Einzelne Inlines
+                <ul class="fragment">
+                  <li>hochladen</li>
+                  <li>ausliefern</li>
+                </ul>
+              </li>
             </ul>
-          </aside>
+
+            <aside class="notes">
+              <ul>
+                Er soll es ermöglichen
+                <li>Projekte hochzuladen und zu persistieren</li>
+                <li>Projekte auszuliefern</li>
+                und das selbe auch für einzelne Inlines
+                <li>also diese hochladen</li>
+                <li>und ausliefern, wenn diese in einem Projekt referenziert werden.</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Client</h2>
+
+            <ul>
+              <li class="fragment">3D-Szene
+                <ul>
+                  <li>Manipulierbar</li>
+                </ul>
+              </li>
+              <li class="fragment">TreeView
+                <ul>
+                  <li class="fragment">Manipulierbar</li>
+                  <li class="fragment">Synchronisiert mit der 3D-Szene</li>
+                </ul>
+              </li>
+              <li class="fragment">SourceView
+                <ul>
+                  <li class="fragment">Editierbar</li>
+                  <li class="fragment">Ausführbar</li>
+                </ul>
+              </li>
+              <li class="fragment">Kommunikation mit einer Eclipse-Instanz
+                <ul>
+                  <li class="fragment">Model-Transformationen anstoßen und Ergebnisse zum Client/Server synchronisieren</li>
+                  <li class="fragment">SSIML-Model rendern und an den Client schicken</li>
+                </ul>
+              </li>
+            </ul>
+
+            <aside class="notes">
+
+            </aside>
+          </section>
+
+          <section>
+            <h2>Konzept</h2>
+            <h3>Kommunikation</h3>
+            <iframe src="https://knsv.github.io/mermaid/live_editor/#/view/c2VxdWVuY2VEaWFncmFtClVzZXItPj4gQnJvd3NlcjogT3BlbiBXZWJwYWdlCkJyb3dzZXItPj4gU2VydmVyOiBHRVQgUHJvamVjdHMKU2VydmVyLT4-IEJyb3dzZXI6IFJldHVybiBQcm9qZWN0IExpc3QKVXNlci0-PiBCcm93c2VyOiBDaG9vc2UgUHJvamVjdApCcm93c2VyLT4-IFNlcnZlcjogUmV0cmlldmUgaW5kZXgueDNkCkJyb3dzZXItPj4gQnJvd3NlcjogRXZhbHVhdGUgU2NlbmUgKGZpbmQgSW5saW5lcykKQnJvd3Nlci0-PiBTZXJ2ZXI6IEdFVCBJbmxpbmVzClNlcnZlci0-PiBCcm93c2VyOiBSZXR1cm4gSW5saW5lcwpCcm93c2VyLT4-IEJyb3dzZXI6IEV2YWx1YXRlIElubGluZXMKVXNlci0-PiBCcm93c2VyOiBDaGFuZ2UgU2NlbmUKVXNlci0-PiBCcm93c2VyOiBTeW5jaHJvbmlzZSBTY2VuZSEKQnJvd3Nlci0-PiBTZXJ2ZXI6IFBPU1QgU2NlbmUKU2VydmVyLT4-IEJyb3dzZXI6IFNjZW5lIFN5bmNocm9uaXNlZCEKIyBBbHQgMQpVc2VyLT4-IEJyb3dzZXI6IFNhdmUgU2NlbmUhCkJyb3dzZXItPj4gVXNlcjogU2hvdyBTYXZlZGlhbG9n" width="600" height="400" alt="Client ↔️ Server Diagram"></iframe>
+
+            <aside class="notes">
+              Minute 7
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Implementation</h2>
+
+            <ul>
+              <li>Client</li>
+              <li>Server</li>
+            </ul>
+
+            <aside class="notes">
+              Wie ist die Applikation geordnet:
+              <ul>
+                <li>Angular</li>
+                <ul>
+                  <li>Modules loading</li>
+                </ul>
+                <li>React</li>
+                <ul>
+                  <li>TreeView</li>
+                </ul>
+                <li>Server Kommunikation</li>
+                <ul>
+                  <li>Keine routes, kein Koa, kein Event Loop. Nur Oberflächlich</li>
+                </ul>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Implementation</h2>
+            <h3>Server</h3>
+
+          </section>
+
+          <section>
+            <h2>Implementation</h2>
+            <h3>Client</h3>
+
+
+          </section>
+
+          <section>
+            <h2>Client</h2>
+            <h3>Angular</h3>
+          </section>
+
+          <section>
+            <h2>Client</h2>
+            <h3>React</h3>
+          </section>
+
+          <section>
+            <h2>Kommunikation</h2>
+          </section>
         </section>
 
         <section>
@@ -720,6 +722,7 @@ const processTranslationGizmoEvent = event => {
         history: true,
         center: true,
         showNotes: true,
+        viewDistance: 10,
 
         transition: 'slide', // none/fade/slide/convex/concave/zoom
 
