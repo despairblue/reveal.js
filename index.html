@@ -413,7 +413,6 @@
           <section>
             <h2>Component Editor</h2>
 
-            <!-- TODO: durch iframe ergänzen -->
             <img
               data-src="images/robot.png"
               alt=""
@@ -421,9 +420,18 @@
               />
 
               <p>
-                <small>https://github.com/x3dom/component-editor</small>
+                <small><a href="https://github.com/x3dom/component-editor">https://github.com/x3dom/component-editor</a></small>
               </p>
+          </section>
 
+          <section>
+            <h2>Component Editor</h2>
+
+            <iframe src="http://examples.x3dom.org/editor/component_editor/" style="width:60vw; height:60vh"></iframe>
+
+              <p>
+                <small><a href="http://examples.x3dom.org/editor/component_editor/">http://examples.x3dom.org/editor/component_editor/</a></small>
+              </p>
           </section>
 
           <section>
@@ -646,6 +654,12 @@ const processTranslationGizmoEvent = event => {
             <ul>
               <li>Client</li>
               <li>Server</li>
+              <li>Beispiele
+                <ol>
+                  <li>Hochladen eines Inlines</li>
+                  <li>Rendern des Treeviews</li>
+                </ol>
+              </li>
             </ul>
 
             <aside class="notes">
@@ -667,17 +681,35 @@ const processTranslationGizmoEvent = event => {
             </aside>
           </section>
 
-          <section>
-            <h2>Implementation</h2>
-            <h3>Server</h3>
-
-          </section>
 
           <section>
             <h2>Implementation</h2>
             <h3>Client</h3>
 
+            <ul>
+              <li><a href="http://www.x3dom.org/">x3dom</a></li>
+              <li><a href="https://angularjs.org/">AngularJS</a></li>
+              <li><a href="https://facebook.github.io/react/">React</a></li>
+            </ul>
 
+          </section>
+
+          <section>
+            <h3>Client</h3>
+            <h4>x3dom</h4>
+
+            <ul>
+              <li>Entwickelt vom Frauenhofer Institut in Darmstadt</li>
+              <li>Shim für X3D-Browser support</li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>Entwickelt vom Frauenhofer Institut in Darmstadt</li>
+                <li>Shim für X3D-Browser support</li>
+                <li>auch einziges, soweit ich weiß</li>
+              </ul>
+            </aside>
           </section>
 
           <section>
@@ -686,22 +718,179 @@ const processTranslationGizmoEvent = event => {
           </section>
 
           <section>
-            <h2>Client</h2>
             <h3>React</h3>
+
+            <img
+              src="images/component-dom-tree.png"
+              alt=""
+              style="height:60vh"
+              />
+
+            <p>
+              <small><a href="http://code.tutsplus.com/tutorials/intro-to-the-react-framework--net-35660">http://code.tutsplus.com/tutorials/intro-to-the-react-framework--net-35660</a></small>
+            </p>
           </section>
 
           <section>
-            <h2>Kommunikation</h2>
+            <h2>Client</h2>
+            <h3>React</h3>
+
+            <div style="">
+              <pre><code class="hljs javascript" data-trim contenteditable>
+const TreeView = ({x3dNode = {}}) =&gt; {&#10;  if (x3dNode.runtime) {&#10;    return &lt;TreeNode&#10;      x3dNode={x3dNode.querySelector(&apos;scene&apos;)}&#10;      runtime={x3dNode.runtime}&#10;      /&gt;&#10;  } else {&#10;    return &lt;div/&gt;&#10;  }&#10;}&#10;
+              </code></pre>
+            </div>
+
+            <p style="font-family:monospace;font-size: 50%;">
+              <span>React.render(<span style="color:yellow">&lt;</span></span><span style="color:red">TreeView</span>
+              <span style="color:green">x3dNode={doc.qS('x3d')}</span><span style="color:yellow">/&gt;,</span>
+              <span style="color:blue">doc.qS('#container')</span><span>)</span>
+            </p>
+
+            <p style="font-family:monospace;font-size: 40%;">
+              <span>React.render(</span><span style="color:yellow">React.createElement(</span><span style="color:red">TreeView</span><span>(</span><span style="color:green">{x3dNode: doc.qS('x3d')}</span><span style="color:yellow">)</span><span>, </span><span style="color:blue">doc.qS('#container')</span><span>)</span>
+            </p>
+          </section>
+
+          <section>
+            <h2>Client</h2>
+            <h3>React</h3>
+
+            <p style="">
+              <span style="color:green">Properties</span> |> <span style="color:red">Component</span> |> <span style="color:blue">DOM</span>
+            </p>
+
+            <p>
+              <ul>
+                <li>Ergo
+                  <ul>
+                    <li>Prop1 == Prop2</li>
+                    <li>DOM1 == DOM2</li>
+                  </ul>
+                </li>
+              </ul>
+            </p>
+
+            <aside class="notes">
+              <ul>
+                <li>UI wird reproduzierbar</li>
+                <li>Vorteil:
+                  <ul>
+                    <li>Bugreport</li>
+                    <li>Unittests</li>
+                  </ul>
+                </li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Beispiel 1</h2>
+
+            <iframe src="https://knsv.github.io/mermaid/live_editor/#/view/c2VxdWVuY2VEaWFncmFtClVzZXItPj5Ccm93c2VyOiBEJ24nRCBYM0QgRmlsZQpCcm93c2VyLT4-QnJvd3NlcjogUmVhZCBGaWxlCkJyb3dzZXItPj5TZXJ2ZXI6IFBPU1QgRmlsZQpTZXJ2ZXItPj5TZXJ2ZXI6IFNhdmUgRmlsZQpTZXJ2ZXItPj5Ccm93c2VyOiByZXR1cm4gVVJMCkJyb3dzZXItPj5Ccm93c2VyOiBDcmVhdGUgSW5saW5lIE5vZGUKQnJvd3Nlci0-PkJyb3dzZXI6IEFkZCBJbmxpbmUgdG8gRE9NCk5vdGUgcmlnaHQgb2YgQnJvd3NlcjogeDNkb20gZnJvbSBoZXJlCkJyb3dzZXItPj5Ccm93c2VyOiBGaW5kIElubGluZQpCcm93c2VyLT4-U2VydmVyOiBHRVQgSW5saW5lClNlcnZlci0-PkJyb3dzZXI6IHJldHVybiBJbmxpbmUKQnJvd3Nlci0-PkJyb3dzZXI6IHJlbmRlciBJbmxpbmUKQnJvd3Nlci0-PlVzZXI6IHNob3cgU2NlbmU" width="600" height="400"></iframe>
+          </section>
+
+          <section>
+            <h2>Beispiel 1</h2>
+            <h3>Server</h3>
+
+            <pre><code class="hljs" style="font-size:65%; line-height:normal" data-trim contenteditable>
+const app = require(&apos;koa&apos;)()&#10;const router = require(&apos;koa-router&apos;)()&#10;const koaBody = require(&apos;koa-body&apos;)({jsonLimit: &apos;10mb&apos;})&#10;const fs = require(&apos;mz/fs&apos;)&#10;const path = require(&apos;path&apos;)&#10;const serve = require(&apos;koa-static&apos;)(path.resolve(&apos;&apos;))&#10;&#10;function uploadInline (projectName, fileName, content) {&#10;  return fs.writeFile(path.join(root, projectName, &apos;src&apos;, fileName), content)&#10;    .then(() =&gt; `projects/${projectName}/src/${fileName}`)&#10;}&#10;&#10;router.post(&apos;/projects/:project/src/:file&apos;, koaBody, function * () {&#10;  this.body = yield uploadInline(this.params.project, this.params.file, this.request.body.content)&#10;  this.status = 202&#10;})&#10;&#10;router.get(&apos;/projects/:project/src/:file&apos;, function * () {&#10;  yield serve&#10;})&#10;&#10;app.use(router.routes())
+            </code></pre>
+
+            <aside class="notes">
+              Kleine Schnittstelle (wenige Routes)
+            </aside>
+          </section>
+
+          <section>
+            <h2>Beispiel 1</h2>
+            <h3>Client</h3>
+
+            <pre><code class="hljs" style="font-size:65%; line-height:normal; max-height:60vh" data-trim contenteditable>
+import {flatten} from &apos;ramda&apos;&#10;import {renderJSX, attachCustomAttributes} from &apos;X3D&apos;&#10;import Project from &apos;Project&apos;&#10;&#10;// simplified&#10;function drop (event) {&#10;  const files = flatten(event.dataTransfer.files) // turn into real array&#10;&#10;  files.forEach(file =&gt; {&#10;    const reader = new window.FileReader()&#10;&#10;    reader.onload = event =&gt; {&#10;      Project&#10;        .uploadFile(file.name, event.target.result)&#10;        .catch(() =&gt; window.alert(&apos;Upload failed.&apos;))&#10;        .then((result) =&gt; {&#10;          this.props.data.appendChild(renderJSX(&#10;            &lt;transform&gt;&#10;              &lt;inline&#10;                url={result.data}&#10;                namespacename={file.name}&#10;                ref={attachCustomAttributes}&#10;                url={result.data}&#10;                namespacename={file.name}&#10;                /&gt;&#10;            &lt;/transform&gt;&#10;          ))&#10;        })&#10;    }&#10;    reader.readAsText(file)&#10;  })&#10;}
+            </code></pre>
+
+            <aside class="notes">
+
+            </aside>
           </section>
         </section>
 
         <section>
-          <h2>Conclusion</h2>
+          <h2>Konklusion</h2>
 
           <ul>
             <li>Aufwand Lernzeit</li>
             <li>Fehlschläge</li>
           </ul>
+
+          <aside class="notes">
+            <ul>
+              <li>Lernen verschiedener Frameworks</li>
+              <li>Lernen größere Webanwendungen zu Strukturieren und zu testen</li>
+              <li>Verlieren in Details (lässt sich nicht vermeiden, jeder empfindet andere Sachen als wichtig)</li>
+            </ul>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>Aussicht</h2>
+
+            <ul>
+              <li>Portierung zu Electron
+                <ul>
+                  <li class="fragment">Offline</li>
+                  <li class="fragment">Performanter</li>
+                  <li class="fragment">Bearbeitung größerer Daten</li>
+                  <li class="fragment">Vereinfachung der Codestruktur</li>
+                  <li class="fragment">Kompletter wegfall des Servers</li>
+                </ul>
+              </li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li>
+                  Electron wurde von GitHub entwickelt um einen code editor mittels
+                  Webtechnologien zu implementieren. Ganz einfach ausgedruckt ist
+                  Electron ein gekapselter Chrome Browser zusammen mit einer Node.js
+                  instanz, welche beide über Inter-process Communication miteinander
+                  kommunizieren können. Die GUI wird mittels HTML (oder einer Template
+                  Engine die HTML generiert) beschrieben oder dynamisch generiert. Im
+                  prinzip geht alles was auch für Webseiten geht. Dabei kann alles mit
+                  Electron mit allen Assets gebundlet und ausgeliefert werden. Das
+                  ermöglicht es entweder Desktop Applikationen mittels Webtechnologien
+                  zu entwickeln die auch ohne Interverbindung funktionieren, als auch
+                  Webapplikationen (wie SceGraToo) zu einer eigentständing
+                  Desktopvariante zu portieren.
+                </li>
+                <li>Größere Datein -> unabhängig von Up- und Downloadgeschwindigkeit</li>
+                <li>Performanter -> Ladezeiten verkürzen sich -> Kein Roundtrip zum Server</li>
+                <li>Vereinfachung der Codstruktur -> Dateisystem API einfacher ist als die Netwerk API</li>
+                <li>Kompletter wegfall des Servers</li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <ul>
+              <li>Extrahierung des Scenengraphen in eine Immutable Datenstruktur
+                <ul>
+                  <li class="fragment">Operations Log</li>
+                  <li class="fragment">Synchronisation</li>
+                  <li class="fragment">Redo/Undo</li>
+                </ul>
+              </li>
+            </ul>
+
+            <aside class="notes">
+              <ul>
+                <li></li>
+              </ul>
+            </aside>
+          </section>
         </section>
 
       </div>
