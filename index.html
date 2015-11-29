@@ -53,11 +53,78 @@
           <p>
             <small>Gutachter: Matthias Lenk</small>
           </p>
+
+          <aside class="">
+            Willkommmen...zu meiner Verteidigung ich bin ein bisschen Krank.
+
+            Falls jemand fragen hat, können die auch zwischendurch gestellt
+            werden. Da ist dann mehr Kontext da, als am Ende und ich kann mich
+            auch darauf einstellen wie tief ich in die Marterie gehe.
+          </aside>
         </section>
 
         <section>
           <section>
-            <h2>Problem</h2>
+            <h2>Problem/Motivation</h2>
+
+            <aside class="notes">
+              Als erstes würde ich gerne über das eigentlich Problem sprechen, bevor ich zur Zielstellung komme.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Roundtrip 3D</h2>
+            <ul>
+              <li class="fragment">Grafischer Editor
+                <ul>
+                  <li class="fragment">Überblick auf die 3D-Szene</li>
+                </ul>
+              </li>
+              <li class="fragment">Generierung von
+                <ul>
+                  <li>Quelltextgerüsten
+                    <ul>
+                      <li>JavaScript && HTML (alles was einen Browser hat)</li>
+                      <li>Java (Android)</li>
+                      <li>C++ (CAVE)</li>
+                    </ul>
+                  </li>
+                  <li>3D Szenegerüst</li>
+                </ul>
+              </li>
+              <li>Rückführung von Änderungen an diesen Gerüsten in ein Hauptmodell.</li>
+            </ul>
+            <aside class="notes">
+              <ul>
+                <li>
+                  R3D war ein Forschungsprojekt, dessen Ziel es war den
+                  Entwicklungsprozess einer 3D-Anwendung hollistisch abzubilden und
+                  zu modellieren.
+                </li>
+                <li>Ihn dabei so sehr zu systematisieren, dass sich große Teile davon automatisieren lassen.</li>
+                <li>Dabei entstanden ein...
+                  <ul>
+                    <li>Graf. Editor</li>
+                    <li>Transformationen -> Codegerüste für versch. Platformen</li>
+                    <li></li>
+                  </ul>
+                </li>
+              </ul>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Grafischer Editor</h2>
+            <img
+              class="fragment grow"
+              data-src="images/SSIML.png"
+              style="height:60vh"
+              alt="Ein SSIML diagram im SSIML Editor."
+              />
+
+            <aside class="notes">
+
+            </aside>
           </section>
 
           <section>
@@ -66,32 +133,10 @@
               <small>aus Matzes Diss (WIP)</small>
             </p>
             <aside class="notes">
-              R3D-Entwicklungsprozess
-            </aside>
-          </section>
-
-          <section>
-            <h2>Roundtrip 3D</h2>
-            <ul>
-              <li>Grafischer Editor</li>
-              <li>Birdseye view auf den Entwicklungsprozess</li>
-              <li>Generierung von</li>
               <ul>
-                <li>Quelltextgerüsten</li>
-                <li>3D Szenegerüst</li>
+                <li>Probleme entstanden für Zielplatform Web</li>
               </ul>
-            </ul>
-            <aside class="notes">
-              R3D war ein Forschungsprojekt, dessen Ziel es war den Entwicklungsprozess einer 3D-Anwendung hollistisch abzubilden und zu modellieren.
-            </aside>
-          </section>
-
-          <section>
-            <h2>Grafischer Editor</h2>
-            <img class="fragment grow" data-src="images/SSIML.png" alt="Ein SSIML diagram im SSIML Editor." />
-            <h3>TODO: diagram der nachfolgenden szene erstellen</h3>
-            <aside class="notes">
-
+              R3D-Entwicklungsprozess
             </aside>
           </section>
 
@@ -129,7 +174,7 @@
             <aside class="notes">
               <ul>
                 <li>Beschreibt weiteren Würfel</li>
-                <li>Gelb</li>
+                <li>Grün</li>
                 <li>und liegt neben dem roten.</li>
               </ul>
             </aside>
@@ -197,13 +242,18 @@
                 </code></pre>
               </div>
             </div>
-            <aside class="notes"></aside>
+            <aside class="notes">
+              <ul>
+                <li>von der eigentlichen Szene ist semantisch nichts mehr übrig geblieben</li>
+                <li>für rückmerge ist das vollkommen nutzlos</li>
+              </ul>
+            </aside>
           </section>
 
         </section>
 
         <section>
-          <h2>Motivation</h2>
+          <h2>Zielstellung</h2>
           <ul>
             <li class="fragment">3D-Editor
               <ul>
@@ -225,6 +275,7 @@
                 <li class="fragment">JavaScript Ausführung</li>
               </ul>
             </li>
+            <li>Gemeinsames Arbeiten durch Synchronisation der Szene</li>
             <li class="fragment">Eclipse Anbindung
               <ul>
                 <li class="fragment">Transformationen anstoßen</li>
@@ -417,12 +468,19 @@
             <h2>3D Meteor</h2>
 
             <p>
-              Defizite
+              Erfüllte Anforderungen
+              <ul>
+                <li>X3D nativ</li>
+                <li>Synchronisiert Szene</li>
+              </ul>
+            </p>
 
+            <p>
+              Defizite
               <ul>
                 <li>Nur Würfel</li>
                 <li>Keine Transformationen</li>
-                <li>Kein X3D im/export</li>
+                <li>Szenen können nicht im-/exportiert werden</li>
               </ul>
             </p>
           </section>
@@ -443,22 +501,26 @@
             </p>
 
             <aside class="notes">
-              <ol>
-                <li>blender starten</li>
-                <li>model laden</li>
-                <li>3d objekt aussuchen</li>
-                <li>aufnahme starten</li>
-                <li>modifizieren</li>
-                <li>aufnahme stoppen</li>
-                <li>diff hochladen</li>
-              </ol>
-              <ol>
-                <li>blender starten</li>
-                <li>model laden</li>
-                <li>diff runterladen</li>
-                <li>objekt auswählen</li>
-                <li>diff anwenden</li>
-              </ol>
+              <p>
+                <ol>
+                  <li>blender starten</li>
+                  <li>model laden</li>
+                  <li>3d objekt aussuchen</li>
+                  <li>aufnahme starten</li>
+                  <li>modifizieren</li>
+                  <li>aufnahme stoppen</li>
+                  <li>diff hochladen</li>
+                </ol>
+              </p>
+              <p>
+                <ol>
+                  <li>blender starten</li>
+                  <li>model laden</li>
+                  <li>diff runterladen</li>
+                  <li>objekt auswählen</li>
+                  <li>diff anwenden</li>
+                </ol>
+              </p>
             </aside>
           </section>
 
@@ -598,6 +660,25 @@
 
           <section>
             <h2>Gizmos</h2>
+
+            <iframe
+            src="iframe/teapot.html"
+            style="width:60vw; height:60vh"
+            >
+            </iframe>
+            <p>
+              <small><a href="http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html">http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html</a></small>
+            </p>
+
+            <aside class="notes">
+              Hier ist ein Beispiel von CylinderSensor und PlaneSensor Knoten.
+              Jedes Band ist der Geschwisterknoten eines CylinderSensors.
+              Der Zylinder mit den Kegeln ist der Geschwisterknoten eines PlaneSensors.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Gizmos</h2>
             <h3>Example</h3>
 
             <pre><code class="hljs" data-trim>
@@ -610,25 +691,6 @@
               Der PlaneSensor hat einige Attribute wie minimale und maximale Auslenkung, sowie einen Callback.
               Dieser Callback erhält die jeweilige Auslenkung des Sensors, diese Auslenkung kann dann auch auf andere
               Objekte angewandt werden.
-            </aside>
-          </section>
-
-          <section>
-            <h2>Gizmos</h2>
-
-            <iframe
-              src="iframe/teapot.html"
-              style="width:60vw; height:60vh"
-              >
-            </iframe>
-            <p>
-              <small><a href="http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html">http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html</a></small>
-            </p>
-
-            <aside class="notes">
-              Hier ist ein Beispiel von CylinderSensor und PlaneSensor Knoten.
-              Jedes Band ist der Geschwisterknoten eines CylinderSensors.
-              Der Zylinder mit den Kegeln ist der Geschwisterknoten eines PlaneSensors.
             </aside>
           </section>
 
@@ -699,31 +761,34 @@ const processTranslationGizmoEvent = event => {
           <section>
             <h2>Client</h2>
 
-            <ul>
-              <li class="fragment">3D-Szene
-                <ul>
-                  <li>Manipulierbar</li>
-                </ul>
-              </li>
-              <li class="fragment">TreeView
-                <ul>
-                  <li class="fragment">Manipulierbar</li>
-                  <li class="fragment">Synchronisiert mit der 3D-Szene</li>
-                </ul>
-              </li>
-              <li class="fragment">SourceView
-                <ul>
-                  <li class="fragment">Editierbar</li>
-                  <li class="fragment">Ausführbar</li>
-                </ul>
-              </li>
-              <li class="fragment">Kommunikation mit einer Eclipse-Instanz
-                <ul>
-                  <li class="fragment">Model-Transformationen anstoßen und Ergebnisse zum Client/Server synchronisieren</li>
-                  <li class="fragment">SSIML-Model rendern und an den Client schicken</li>
-                </ul>
-              </li>
-            </ul>
+            <div style="font-size:90%">
+              <ul>
+                <li class="fragment">3D-Szene
+                  <ul>
+                    <li>Manipulierbar</li>
+                    <li>Synchronisation mit anderen Clients</li>
+                  </ul>
+                </li>
+                <li class="fragment">TreeView
+                  <ul>
+                    <li class="fragment">Manipulierbar</li>
+                    <li class="fragment">Synchronisiert mit der 3D-Szene</li>
+                  </ul>
+                </li>
+                <li class="fragment">SourceView
+                  <ul>
+                    <li class="fragment">Editierbar</li>
+                    <li class="fragment">Ausführbar</li>
+                  </ul>
+                </li>
+                <li class="fragment">Kommunikation mit einer Eclipse-Instanz
+                  <ul>
+                    <li class="fragment">Model-Transformationen anstoßen und Ergebnisse zum Client/Server synchronisieren</li>
+                    <li class="fragment">SSIML-Model rendern und an den Client schicken</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
             <aside class="notes">
 
@@ -856,18 +921,18 @@ const processTranslationGizmoEvent = event => {
 
             <div style="">
               <pre><code class="hljs javascript" data-trim contenteditable>
-const TreeView = ({x3dNode = {}}) =&gt; {&#10;  if (x3dNode.runtime) {&#10;    return &lt;TreeNode&#10;      x3dNode={x3dNode.querySelector(&apos;scene&apos;)}&#10;      runtime={x3dNode.runtime}&#10;      /&gt;&#10;  } else {&#10;    return &lt;div/&gt;&#10;  }&#10;}&#10;
+const TreeView = ({x3dNode = {}}) =&gt; {&#10;  if (x3dNode.runtime) {&#10;    return &lt;TreeNode&#10;      node={x3dNode.querySelector(&apos;scene&apos;)}&#10;      runtime={x3dNode.runtime}&#10;      /&gt;&#10;  } else {&#10;    return &lt;div/&gt;&#10;  }&#10;}
               </code></pre>
             </div>
 
             <p style="font-family:monospace;font-size: 50%;">
               <span>React.render(<span style="color:yellow">&lt;</span></span><span style="color:red">TreeView</span>
-              <span style="color:green">x3dNode={doc.qS('x3d')}</span><span style="color:yellow">/&gt;,</span>
+              <span style="color:green">x3dNode={doc.qS('x3d')}</span><span style="color:yellow">/&gt;</span><span>,</span>
               <span style="color:blue">doc.qS('#container')</span><span>)</span>
             </p>
 
             <p style="font-family:monospace;font-size: 40%;">
-              <span>React.render(</span><span style="color:yellow">React.createElement(</span><span style="color:red">TreeView</span><span>(</span><span style="color:green">{x3dNode: doc.qS('x3d')}</span><span style="color:yellow">)</span><span>, </span><span style="color:blue">doc.qS('#container')</span><span>)</span>
+              <span>React.render(</span><span style="color:yellow">React.createElement(</span><span style="color:red">TreeView</span><span style="color:yellow">(</span><span style="color:green">{x3dNode: doc.qS('x3d')}</span><span style="color:yellow">))</span><span>, </span><span style="color:blue">doc.qS('#container')</span><span>)</span>
             </p>
           </section>
 
@@ -929,7 +994,7 @@ const app = require(&apos;koa&apos;)()&#10;const router = require(&apos;koa-rout
             <h3>Client</h3>
 
             <pre><code class="hljs" style="font-size:65%; line-height:normal; max-height:60vh" data-trim contenteditable>
-import {flatten} from &apos;ramda&apos;&#10;import {renderJSX, attachCustomAttributes} from &apos;X3D&apos;&#10;import Project from &apos;Project&apos;&#10;&#10;// simplified&#10;function drop (event) {&#10;  const files = flatten(event.dataTransfer.files) // turn into real array&#10;&#10;  files.forEach(file =&gt; {&#10;    const reader = new window.FileReader()&#10;&#10;    reader.onload = event =&gt; {&#10;      Project&#10;        .uploadFile(file.name, event.target.result)&#10;        .catch(() =&gt; window.alert(&apos;Upload failed.&apos;))&#10;        .then((result) =&gt; {&#10;          this.props.data.appendChild(renderJSX(&#10;            &lt;transform&gt;&#10;              &lt;inline&#10;                url={result.data}&#10;                namespacename={file.name}&#10;                ref={attachCustomAttributes}&#10;                url={result.data}&#10;                namespacename={file.name}&#10;                /&gt;&#10;            &lt;/transform&gt;&#10;          ))&#10;        })&#10;    }&#10;    reader.readAsText(file)&#10;  })&#10;}
+import {flatten} from &apos;ramda&apos;&#10;import {renderJSX} from &apos;X3D&apos;&#10;import Project from &apos;Project&apos;&#10;&#10;// simplified&#10;function drop (event) {&#10;  const files = flatten(event.dataTransfer.files) // turn into real array&#10;&#10;  files.forEach(file =&gt; {&#10;    const reader = new window.FileReader()&#10;&#10;    reader.onload = event =&gt; {&#10;      Project&#10;        .uploadFile(file.name, event.target.result)&#10;        .catch(() =&gt; window.alert(&apos;Upload failed.&apos;))&#10;        .then((result) =&gt; {&#10;          this.props.data.appendChild(renderJSX(&#10;            &lt;transform&gt;&#10;              &lt;inline&#10;                url={result.data}&#10;                namespacename={file.name}&#10;                /&gt;&#10;            &lt;/transform&gt;&#10;          ))&#10;        })&#10;    }&#10;    reader.readAsText(file)&#10;  })&#10;}
             </code></pre>
 
             <aside class="notes">
@@ -954,7 +1019,7 @@ import {flatten} from &apos;ramda&apos;&#10;import {renderJSX, attachCustomAttri
             <h2>Beispiel 2</h2>
 
             <pre><code class="hljs jsx" style="font-size:60%; line-height:normal; max-height:70vh" data-trim contenteditable>
-// much simplified&#10;import React from &apos;react&apos;&#10;import {setUpInline} from &apos;x3domUtils&apos;&#10;import {throttle} from &apos;lodash&apos;&#10;import {eq, flatten} from &apos;ramda&apos;&#10;import TreeView from &apos;TreeView&apos;&#10;&#10;const watchedAttributes = [&#10;  &apos;diffuseColor&apos;, &apos;orientation&apos;, &apos;position&apos;,&#10;  &apos;render&apos;, &apos;rotation&apos;, &apos;scale&apos;, &apos;translation&apos;&#10;]&#10;const rerender = throttle(React.render, 100)&#10;const container = document.querySelector(&apos;#container&apos;)&#10;const x3dNode = document.querySelector(&apos;x3d&apos;)&#10;const x3dObserver = new window.MutationObserver(mutations =&gt; {&#10;  mutations.forEach(mutation =&gt; {&#10;    if (mutation.type === &apos;attributes&apos;) {&#10;      if (watchedAttributes.some(eq(mutation.attributeName))) {&#10;        rerender(&lt;TreeView x3dNode={x3dNode} /&gt;, container)&#10;      }&#10;    } else if (mutation.type === &apos;childList&apos;) {&#10;      flatten(mutation.addedNodes)&#10;        .filter(node =&gt; node.nodeName.toLowerCase() === &apos;transform&apos;)&#10;        .forEach(transform =&gt; {&#10;          const inline = transform.children[0]&#10;&#10;          if (inline &amp;&amp; inline.nodeName.toLowerCase() === &apos;inline&apos;) {&#10;            setUpInline(inline, x3dNode)&#10;          }&#10;        })&#10;&#10;      rerender(&lt;TreeView x3dNode={x3dNode} /&gt;, container)&#10;    }&#10;  })&#10;})&#10;&#10;x3dObserver.observe(x3dNode.querySelector(&apos;scene&apos;))&#10;&#10;React.render(&lt;TreeView data={x3dNode} /&gt;, container)
+// much simplified&#10;import React from &apos;react&apos;&#10;import {setUpInline} from &apos;x3domUtils&apos;&#10;import {throttle} from &apos;lodash&apos;&#10;import {flatten} from &apos;ramda&apos;&#10;import TreeView from &apos;TreeView&apos;&#10;&#10;const watchedAttributes = [&#10;  &apos;diffuseColor&apos;, &apos;orientation&apos;, &apos;position&apos;,&#10;  &apos;render&apos;, &apos;rotation&apos;, &apos;scale&apos;, &apos;translation&apos;&#10;]&#10;const rerender = throttle(React.render, 100)&#10;const container = document.querySelector(&apos;#container&apos;)&#10;const x3dNode = document.querySelector(&apos;x3d&apos;)&#10;const x3dObserver = new window.MutationObserver(mutations =&gt; {&#10;  mutations.forEach(mutation =&gt; {&#10;    if (mutation.type === &apos;attributes&apos;) {&#10;      if (watchedAttributes.some(name =&gt; name === mutation.attributeName)) {&#10;        rerender(&lt;TreeView x3dNode={x3dNode} /&gt;, container)&#10;      }&#10;    } else if (mutation.type === &apos;childList&apos;) {&#10;      flatten(mutation.addedNodes)&#10;        .filter(node =&gt; node.nodeName.toLowerCase() === &apos;transform&apos;)&#10;        .forEach(transform =&gt; {&#10;          const inline = transform.children[0]&#10;&#10;          if (inline &amp;&amp; inline.nodeName.toLowerCase() === &apos;inline&apos;) {&#10;            setUpInline(inline, x3dNode)&#10;          }&#10;        })&#10;&#10;      rerender(&lt;TreeView x3dNode={x3dNode} /&gt;, container)&#10;    }&#10;  })&#10;})&#10;&#10;x3dObserver.observe(x3dNode.querySelector(&apos;scene&apos;))&#10;&#10;React.render(&lt;TreeView data={x3dNode} /&gt;, container)
             </code></pre>
 
             <aside class="notes">
@@ -988,10 +1053,13 @@ import {flatten} from &apos;ramda&apos;&#10;import {renderJSX, attachCustomAttri
         <section>
           <h2>Ergebnis</h2>
 
-          <ul>
-            <li>Aufwand Lernzeit</li>
-            <li>Fehlschläge</li>
-          </ul>
+          <p>
+            Fehlt
+            <ul>
+              <li>Synchronisations</li>
+              <li>Eclipseanbindung</li>
+            </ul>
+          </p>
 
           <aside class="notes">
             <ul>
