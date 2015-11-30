@@ -82,17 +82,17 @@
               </li>
               <li class="fragment">Generierung von
                 <ul>
-                  <li>Quelltextgerüsten
+                  <li class="fragment">Quelltextgerüsten
                     <ul>
-                      <li>JavaScript && HTML (alles was einen Browser hat)</li>
-                      <li>Java (Android)</li>
-                      <li>C++ (CAVE)</li>
+                      <li class="fragment">JavaScript && HTML (alles was einen Browser hat)</li>
+                      <li class="fragment">Java (Android)</li>
+                      <li class="fragment">C++ (CAVE)</li>
                     </ul>
                   </li>
-                  <li>3D Szenegerüst</li>
+                  <li class="fragment">3D Szenegerüst</li>
                 </ul>
               </li>
-              <li>Rückführung von Änderungen an diesen Gerüsten in ein Hauptmodell.</li>
+              <li class="fragment">Rückführung von Änderungen an diesen Gerüsten in ein Hauptmodell.</li>
             </ul>
             <aside class="notes">
               <ul>
@@ -118,12 +118,16 @@
             <img
               class="fragment grow"
               data-src="images/SSIML.png"
-              style="height:60vh"
+              style="height:50vh"
               alt="Ein SSIML diagram im SSIML Editor."
               />
 
-            <aside class="notes">
+            <p>
+              <small><a href="http://tu-freiberg.de/fakult1/inf/professuren/virtuelle-realitaet-und-multimedia/forschung-jung/roundtrip3d">http://tu-freiberg.de/fakult1/inf/professuren/virtuelle-realitaet-und-multimedia/forschung-jung/roundtrip3d</a></small>
+            </p>
 
+            <aside class="notes">
+              erklären was auf dem bild zu sehen ist
             </aside>
           </section>
 
@@ -142,7 +146,7 @@
 
           <section>
             <h2>X3D vor Blender</h2>
-            <pre><code class="hljs" style="font-size: 80%; line-height:normal" data-trim contenteditable>
+            <pre><code class="hljs" style="font-size: 80%; line-height:normal; max-height:60vh" data-trim contenteditable>
 &lt;!-- id=bf5e1521-43c0-49ea-9a06-314739e6a81f --&gt;&#10;&lt;X3D&gt;&#10;  &lt;!-- id=69b81d54-6e7a-4967-acca-b8c89ba90782 --&gt;&#10;  &lt;Scene&gt;&#10;      &lt;!-- id=8d3f0a8a-b6d7-4acc-922b-ea59364443fa --&gt;&#10;      &lt;Shape &gt;&#10;        &lt;!-- id=8459b736-5a9d-4688-b624-e519857a92fd --&gt;&#10;        &lt;Appearance&gt;&#10;          &lt;!-- id=gf4eh5xw-kc7h-3kgu-ae90-3a4g3heh4a2f --&gt;&#10;          &lt;Material diffuseColor=&quot;1 0 0&quot;/&gt;&#10;        &lt;/Appearance&gt;&#10;        &lt;Box /&gt;&#10;      &lt;/Shape&gt;&#10;      &lt;!-- id=a4d98xq6-39dj-20dk-ax83-ed1g85aa422d --&gt;&#10;      &lt;Transform DEF=&quot;generatedTransform3&quot; scale=&quot;1 1 1&quot;&#10;                 rotation=&quot;0 0 1 0&quot; translation=&quot;3 0 0&quot; &gt;&#10;        &lt;Inline DEF=&quot;YBox&quot; nameSpaceName=&quot;YBox&quot; url=&quot;greenbox.x3d&quot; &gt;&#10;        &lt;/Inline&gt;&#10;      &lt;/Transform&gt;&#10;  &lt;/Scene&gt;&#10;&lt;/X3D&gt;
             </code></pre>
             <aside class="notes">
@@ -275,7 +279,7 @@
                 <li class="fragment">JavaScript Ausführung</li>
               </ul>
             </li>
-            <li>Gemeinsames Arbeiten durch Synchronisation der Szene</li>
+            <li class="fragment">Gemeinsames Arbeiten durch Synchronisation der Szene</li>
             <li class="fragment">Eclipse Anbindung
               <ul>
                 <li class="fragment">Transformationen anstoßen</li>
@@ -497,7 +501,7 @@
               />
 
             <p>
-              <small>Martin Lesage, Martin Lesage, Gilles Raîche. A Blender Plugin for Collaborative Work on the Articiel Platform.</small>
+              <small>Martin Lesage, Gilles Raîche. A Blender Plugin for Collaborative Work on the Articiel Platform.</small>
             </p>
 
             <aside class="notes">
@@ -551,7 +555,7 @@
               Defizite
 
               <ul>
-                <li>Verschiebung auf Poligonebene.</li>
+                <li>Verschiebung auf Polygonebene.</li>
                 <li>Blenders im-/export Skripte sind verlustbehaftet.</li>
               </ul>
             </p>
@@ -1081,7 +1085,7 @@ import {flatten} from &apos;ramda&apos;&#10;import {renderJSX} from &apos;X3D&ap
                   <li class="fragment">Performanter</li>
                   <li class="fragment">Bearbeitung größerer Daten</li>
                   <li class="fragment">Vereinfachung der Codestruktur</li>
-                  <li class="fragment">Kompletter wegfall des Servers</li>
+                  <li class="fragment">Kompletter Wegfall des Servers</li>
                 </ul>
               </li>
             </ul>
@@ -1123,6 +1127,11 @@ import {flatten} from &apos;ramda&apos;&#10;import {renderJSX} from &apos;X3D&ap
               </li>
             </ul>
 
+            <p>
+              <small>Edward Fredkin -- Trie Memory</small><br>
+              <small>J.C.R Licklider -- Man-Computer Symbiosis</small>
+            </p>
+
             <aside class="notes">
               <ul>
                 <li></li>
@@ -1131,8 +1140,27 @@ import {flatten} from &apos;ramda&apos;&#10;import {renderJSX} from &apos;X3D&ap
           </section>
         </section>
 
-      </div>
+        <section>
+          <h2>Quellen</h2>
 
+          <ol style="font-size:50%">
+            <li><a href="http://tu-freiberg.de/fakult1/inf/professuren/virtuelle-realitaet-und-multimedia/forschung-jung/roundtrip3d">http://tu-freiberg.de/fakult1/inf/professuren/virtuelle-realitaet-und-multimedia/forschung-jung/roundtrip3d</a></li>
+            <li>Matthias Lenk - Dissertation</li>
+            <li><a href="http://doi.acm.org/10.1145/2338714.2338721">http://doi.acm.org/10.1145/2338714.2338721</a></li>
+            <li><a href="http://paraviewweb.kitware.com/apps/LiveArticles/">http://paraviewweb.kitware.com/apps/LiveArticles/</a></li>
+            <li><a href="https://3d.meteor.com">https://3d.meteor.com</a></li>
+            <li>Martin Lesage, Gilles Raîche. A Blender Plugin for Collaborative Work on the Articiel Platform.</li>
+            <li><a href="http://examples.x3dom.org/editor/component_editor/">http://examples.x3dom.org/editor/component_editor/</a></li>
+            <li><a href="https://github.com/x3dom/component-editor">https://github.com/x3dom/component-editor</a></li>
+            <li><a href="http://wiki.blender.org/index.php/Doc:2.4/Manual/3D_interaction/Transform_Control/Manipulators">http://wiki.blender.org/index.php/Doc:2.4/Manual/3D_interaction/Transform_Control/Manipulators</a></li>
+            <li><a href="http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html">http://doc.x3dom.org/tutorials/animationInteraction/transformations/index.html</a></li>
+            <li><a href="http://code.tutsplus.com/tutorials/intro-to-the-react-framework--net-35660">http://code.tutsplus.com/tutorials/intro-to-the-react-framework--net-35660</a></li>
+            <li>Edward Fredkin -- Trie Memory</li>
+            <li>J.C.R Licklider -- Man-Computer Symbiosis</li>
+          </ol>
+        </section>
+
+      </div>
     </div>
 
     <script src="lib/js/head.min.js"></script>
